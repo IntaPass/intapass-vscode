@@ -1,5 +1,7 @@
 {
   "name": "intapass",
+  "publisher": "intapass",
+  "repository": "https://github.com/intapass/intapass-vscode",
   "displayName": "IntaPass",
   "description": "Co-pilot for high performing teams and developers",
   "version": "0.0.1",
