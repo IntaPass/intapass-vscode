@@ -13,13 +13,31 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('intapass.helloWorld', () => {
+	let genComments = vscode.commands.registerCommand('intapass.genComments', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from IntaPass!');
+		vscode.window.showInformationMessage('Generated comments!');
 	});
 
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(genComments);
+
+	let genUnitTest = vscode.commands.registerCommand('intapass.genUnitTest', () => {
+		vscode.window.showInformationMessage('Generated unit tests!');
+	});
+
+	context.subscriptions.push(genUnitTest);
+
+	let genDocker = vscode.commands.registerCommand('intapass.genDocker', () => {
+		vscode.window.showInformationMessage('Generated Docker!');
+	});
+
+	context.subscriptions.push(genDocker);
+
+	let genAnsible = vscode.commands.registerCommand('intapass.genAnsible', () => {
+		vscode.window.showInformationMessage('Generated Ansible!');
+	});
+
+	context.subscriptions.push(genAnsible);
 }
 
 // This method is called when your extension is deactivated

@@ -16,8 +16,20 @@
   "contributes": {
     "commands": [
       {
-        "command": "intapass.helloWorld",
-        "title": "Hello World"
+        "command": "intapass.genComments",
+        "title": "Generate Comments"
+      },
+      {
+        "command": "intapass.genUnitTest",
+        "title": "Generate Unit Test"
+      },
+      {
+        "command": "intapass.genDocker",
+        "title": "Generate Docker Script"
+      },
+      {
+        "command": "intapass.genAnsible",
+        "title": "Generate Ansible Script"
       }
     ]
   },
