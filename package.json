@@ -1,10 +1,13 @@
 {
+  "enabledApiProposals": [
+		"inlineCompletionsAdditions"
+	],
   "name": "intapass",
   "publisher": "intapass",
   "repository": "https://github.com/intapass/intapass-vscode",
   "displayName": "IntaPass",
   "description": "Co-pilot for high performing teams and developers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -17,21 +20,36 @@
     "commands": [
       {
         "command": "intapass.genComments",
+        "category": "IntaPass",
         "title": "Generate Comments"
       },
       {
         "command": "intapass.genUnitTest",
+        "category": "IntaPass",
         "title": "Generate Unit Test"
       },
       {
         "command": "intapass.genDocker",
+        "category": "IntaPass",
         "title": "Generate Docker Script"
       },
       {
         "command": "intapass.genAnsible",
+        "category": "IntaPass",
         "title": "Generate Ansible Script"
-      }
-    ]
+      },
+      {
+				"command": "extension.inline-completion-settings",
+				"title": "My Inline Completion Demo Settings"
+			}
+    ],
+    "menus": {
+			"editor/inlineCompletions/actions": [
+				{
+					"command": "extension.inline-completion-settings"
+				}
+			]
+		}
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -39,7 +57,9 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "build": "vsce package",
+    "download-api": "npx @vscode/dts dev"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
