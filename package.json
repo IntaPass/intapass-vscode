@@ -1,7 +1,4 @@
 {
-  "enabledApiProposals": [
-		"inlineCompletionsAdditions"
-	],
   "name": "intapass",
   "publisher": "intapass",
   "repository": "https://github.com/intapass/intapass-vscode",
@@ -14,7 +11,7 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [ "onStartupFinished" ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -42,14 +39,7 @@
 				"command": "extension.inline-completion-settings",
 				"title": "My Inline Completion Demo Settings"
 			}
-    ],
-    "menus": {
-			"editor/inlineCompletions/actions": [
-				{
-					"command": "extension.inline-completion-settings"
-				}
-			]
-		}
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

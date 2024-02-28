@@ -10,7 +10,7 @@
 			"type": "extensionHost",
 			"request": "launch",
 			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}"
+				"--extensionDevelopmentPath=${workspaceFolder} --enable-proposed-api intapass.intapass", "${workspaceFolder}/playground.js", 
 			],
 			"outFiles": [
 				"${workspaceFolder}/out/**/*.js"
