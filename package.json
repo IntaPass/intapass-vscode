@@ -4,43 +4,31 @@
   "repository": "https://github.com/intapass/intapass-vscode",
   "displayName": "IntaPass",
   "description": "Co-pilot for high performing teams and developers",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.85.0"
   },
   "categories": [
-    "Other"
+    "Machine Learning",
+    "Testing"
   ],
-  "activationEvents": [ "onStartupFinished" ],
-  "main": "./out/extension.js",
+  "activationEvents": [
+    "onCommand:extension.intapassReview"
+  ],
   "contributes": {
-    "commands": [
-      {
-        "command": "intapass.genComments",
-        "category": "IntaPass",
-        "title": "Generate Comments"
-      },
-      {
-        "command": "intapass.genUnitTest",
-        "category": "IntaPass",
-        "title": "Generate Unit Test"
-      },
-      {
-        "command": "intapass.genDocker",
-        "category": "IntaPass",
-        "title": "Generate Docker Script"
-      },
-      {
-        "command": "intapass.genAnsible",
-        "category": "IntaPass",
-        "title": "Generate Ansible Script"
-      },
-      {
-				"command": "extension.inline-completion-settings",
-				"title": "My Inline Completion Demo Settings"
-			}
-    ]
+      "commands": [{
+          "command": "extension.intapassReview",
+          "title": "Intapass: Review Code"
+      }],
+      "menus": {
+          "editor/context": [{
+              "when": "editorTextFocus",
+              "command": "extension.intapassReview",
+              "group": "navigation"
+          }]
+      }
   },
+  "main": "./out/extension.js",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -52,14 +40,17 @@
     "download-api": "npx @vscode/dts dev"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
-    "eslint": "^8.56.0",
-    "typescript": "^5.3.3",
     "@vscode/test-cli": "^0.0.6",
-    "@vscode/test-electron": "^2.3.9"
+    "@vscode/test-electron": "^2.3.9",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.7"
   }
 }
